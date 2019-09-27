@@ -17,7 +17,7 @@ express-validator: data validation
 bcryptjs: password encryption
 config: global variable
 gravatar: profile avatar
-jsonwebtoken: use JWT to pass along a token for validation
+jsonwebtoken: use JWT to pass along a token for validation. http://jwt.io, https://www.npmjs.com/package/jsonwebtoken
 mongoose: a layer sit on top of mongoose so we can interact with
 request: module to make http request, can use axios as alternative
 
