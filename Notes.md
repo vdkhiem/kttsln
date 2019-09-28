@@ -12,5 +12,6 @@ module.exports = router;
 
 ### Middleware
 
+It is used to validate http request
 If using auth with facebook/google login, then use passwordjs
 Else use standard middleware

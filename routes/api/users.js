@@ -35,7 +35,9 @@ router.post(
       // Checks if user exists
       const existingUser = await User.findOne({ email }).then();
       if (existingUser) {
-        res.status(400).json({ errors: [{ msg: 'User already exist' }] }); // use this error format to consistent error from express-validator
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'User already exist' }] }); // use this error format to consistent error from express-validator
       }
 
       // Get users gravatar
@@ -52,7 +54,7 @@ router.post(
         password
       });
 
-      // Encrypt password
+      // Encrypt password and save a new user
       const salt = await bcrypt.genSalt(10); // 10 is recommended by bcryptjs
       newUser.password = await bcrypt.hash(password, salt);
       await newUser.save();
