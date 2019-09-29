@@ -18,3 +18,20 @@ const router = express.Router;
 Solution
 const { Router } = require('express');
 const router = new Router();
+
+### profile validation failed: handle: Path `handle` is required.
+
+# Cause: Profile defind handle field as required field. However, we don't pass handle when we save a profile
+
+# Solution:
+
+Implement validation for handle
+check('handle', 'Handle is required')
+.not()
+.isEmpty()
+
+Set handle value
+if (handle) profileFields.handle = handle;
+const {
+company,
+handle,
