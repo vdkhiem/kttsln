@@ -35,3 +35,12 @@ if (handle) profileFields.handle = handle;
 const {
 company,
 handle,
+
+### DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated.
+
+https://mongoosejs.com/docs/deprecations.html
+Solution
+await mongoose.connect(dbURI, {
+...
+useFindAndModify: false // set this one
+});
